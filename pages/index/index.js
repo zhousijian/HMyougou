@@ -72,6 +72,5 @@ Page({
     this.setData({
       isShow : current
     })
-    console.log(111)
   }
 })

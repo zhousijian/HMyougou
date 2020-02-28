@@ -47,16 +47,16 @@
 .content .right image {
   margin-left: 9rpx;
   width: 232rpx;
-  height: 180rpx;
+  height: 182rpx;
 }
 /* 兄弟选择器 */
 .floor + .floor .content .right image {
   width: 194rpx;
-  height: 180rpx;
+  height: 182rpx;
 }
 .floor + .floor .content .right image:nth-child(3n+1) {
   width: 270rpx;
-  height: 180rpx;
+  height: 182rpx;
 }
 .bottom {
   z-index: 10;
