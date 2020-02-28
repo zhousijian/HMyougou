@@ -10,12 +10,21 @@
   <!-- 轮播图 -->
   <view class="carousel">
     <swiper indicator-dots="true" indicator-color="rgba(255, 255, 255, .3)" indicator-active-color="rgba(255, 255, 255, 1)" circular>
-      <block wx:for="{{message}}" wx:key="index">
+      <block wx:for="{{carousel}}" wx:key="index">
         <swiper-item>
           <image src="{{item.image_src}}" mode="aspectFill"></image>
         </swiper-item>
       </block>
     </swiper>
+  </view>
+  <!-- 导航栏 -->
+  <view class="navs">
+  <!-- block标签是没有意义的，基多用于循环使用 -->
+    <block wx:for="{{nav}}" wx:key="index">
+      <navigator url="{{item.url}}" open-type="{{item.open_type}}">
+        <image src="{{item.image_src}}"></image>
+      </navigator>
+    </block>
   </view>
 
 
