@@ -6,7 +6,9 @@ Page({
     // 轮播图的数据
     carousel : [],
     // 导航栏的数据
-    nav : []
+    nav : [],
+    // 楼层得数据
+    floor : []
   },
   onLoad(){
     // 轮播图的请求
@@ -41,7 +43,11 @@ Page({
     request({
       url: '/home/floordata'
     }).then(res=>{
-      console.log(res)
+      // console.log(res)
+      const { message } = res.data
+      this.setData({
+        floor : message
+      })
     })
 
   }

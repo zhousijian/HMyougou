@@ -27,3 +27,34 @@
   width: 128rpx;
   height: 140rpx;
 }
+.floor {
+  margin: 20rpx;
+}
+.floor .title image {
+  width: 750rpx;
+  height: 80rpx;
+}
+.floor .content {
+  display: flex;
+}
+.content .left image {
+  width: 230rpx;
+  height: 370rpx;
+}
+.contetn .right {
+  display: flex;
+}
+.content .right image {
+  margin-left: 9rpx;
+  width: 232rpx;
+  height: 180rpx;
+}
+/* 兄弟选择器 */
+.floor + .floor .content .right image {
+  width: 194rpx;
+  height: 180rpx;
+}
+.floor + .floor .content .right image:nth-child(3n+1) {
+  width: 270rpx;
+  height: 180rpx;
+}

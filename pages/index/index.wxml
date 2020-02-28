@@ -19,12 +19,26 @@
   </view>
   <!-- 导航栏 -->
   <view class="navs">
-  <!-- block标签是没有意义的，基多用于循环使用 -->
+    <!-- block标签是没有意义的，基多用于循环使用 -->
     <block wx:for="{{nav}}" wx:key="index">
       <navigator url="{{item.url}}" open-type="{{item.open_type}}">
         <image src="{{item.image_src}}"></image>
       </navigator>
     </block>
+  </view>
+  <!-- 楼层 -->
+  <view class="floor" wx:for="{{floor}}" wx:key="index">
+    <view class="title">
+      <image src="{{item.floor_title.image_src}}"></image>
+    </view>
+    <view class="content">
+      <view class="left">
+        <image src="{{item.product_list[0].image_src}}"></image>
+      </view>
+      <view class="right">
+        <image src="{{item.image_src}}" wx:for="{{item.product_list}}" wx:key="index" wx:if="{{index > 0}}"></image>
+      </view>
+    </view>
   </view>
 
 
