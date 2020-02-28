@@ -40,7 +40,9 @@
       </view>
     </view>
   </view>
-
-
-
+  <!-- 返回顶部的按钮 -->
+  <view class="bottom" bindtap="handleClick" wx:if="{{isShow}}">
+    <view class="icon"></view>
+    <view class="text">顶部</view>
+  </view>
 </view>

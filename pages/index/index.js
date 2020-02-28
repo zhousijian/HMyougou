@@ -8,7 +8,9 @@ Page({
     // 导航栏的数据
     nav : [],
     // 楼层得数据
-    floor : []
+    floor : [],
+    // 返回顶部按钮的状态
+    isShow : false
   },
   onLoad(){
     // 轮播图的请求
@@ -49,6 +51,27 @@ Page({
         floor : message
       })
     })
-
+  },
+  // 点击按钮页面滚动回顶部
+  handleClick(){
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300
+    })
+  },
+  // 页面滚动时触发的函数
+  onPageScroll(e){
+    // console.log(e)
+    let current = this.data.isShow
+    if(e.scrollTop > 100){
+      current = true
+    }else {
+      current = false
+    }
+    if (current == this.data.isShow) return;
+    this.setData({
+      isShow : current
+    })
+    console.log(111)
   }
 })

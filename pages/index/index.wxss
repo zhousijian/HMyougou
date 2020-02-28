@@ -58,3 +58,29 @@
   width: 270rpx;
   height: 180rpx;
 }
+.bottom {
+  z-index: 10;
+  position: fixed;
+  bottom: 10rpx;
+  right: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.bottom .icon {
+  width: 20rpx;
+  height: 20rpx;
+  border-left: 1px solid #fff;
+  border-top: 1px solid #fff;
+  transform: rotate(45deg);
+  margin-top: 5rpx;
+}
+.bottom .text {
+  font-size: 25rpx;
+  color: #fff;
+}
