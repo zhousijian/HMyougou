@@ -1,12 +1,26 @@
 /* pages/category/index.wxss */
 .main {
   display: flex;
-  flex-direction: column;
+  position: fixed;
+  top: 100rpx;
+  bottom: 0;
+  width: 750rpx;
+}
+.left {
+  width: 198rpx;
+  height: 100%;
+  overflow: auto;
+}
+.left::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
 }
 .main .menu {
   display: flex;
+  overflow: auto;
   align-items: center;
-  width: 198rpx;
+  width: 100%;
   height: 100rpx;
   background-color: #f4f4f4;
 }
@@ -15,6 +29,7 @@
   height: 60rpx;
   line-height: 60rpx;
   text-align: center;
+  font-size: 32rpx;
 }
 .main .active {
   background-color: #fff;
@@ -23,8 +38,48 @@
 .active-border {
   border-left: 3px solid red;
 }
-.main .content {
-  flex: 1;
-  margin: 20rpx 16rpx;
-  background-color: pink;
+.main .right {
+  padding: 18rpx 18rpx;
+  width: 520rpx;
+  height: 100%;
+  overflow: auto;
+}
+.right::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.right .img image {
+  width: 520rpx;
+}
+.right .title {
+  margin: 25rpx 0;
+  text-align: center;
+  color: #999;
+}
+.right .title text {
+  margin: 0 35rpx;
+  font-size: 30rpx;
+  color: black;
+}
+.right .content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.right .brand {
+  /* flex: 0 0 24%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25rpx;
+  align-items: center;
+  width: 125rpx;
+}
+.right .brand image {
+  width: 100%;
+  /* height: 62px !important; */
+}
+.right .brand .text {
+  font-size: 25rpx;
+  white-space: nowrap;
 }

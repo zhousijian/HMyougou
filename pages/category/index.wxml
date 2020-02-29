@@ -5,12 +5,36 @@
   <!-- 主体部分 -->
   <view class="main">
     <!-- 左侧菜单栏 -->
-    <block wx:for="{{allData}}" wx:key="index">
-      <view class="menu {{current == index ? 'active' : ''}}">
-        <view class="navs {{current == index ? 'active-border' : ''}}" bindtap="handleClick" data-index="{{index}}">{{item.cat_name}}</view>
-      </view>
-    </block>
+    <view class="left">
+      <block wx:for="{{allData}}" wx:key="index">
+        <view class="menu {{current == index ? 'active' : ''}}">
+          <view class="navs {{current == index ? 'active-border' : ''}}" bindtap="handleClick" data-index="{{index}}">{{item.cat_name}}</view>
+        </view>
+      </block>
+    </view>
     <!-- 右侧内容 -->
-    <view class="content"></view>
+    <view class="right">
+      <!-- 展览图 -->
+      <view class="img">
+        <image src="https://img.alicdn.com/simba/img/TB1O9ihwND1gK0jSZFySuwiOVXa.jpg" mode="widthFix"></image>
+      </view>
+      <!-- 产品 -->
+      <block wx:for="{{allData[current].children}}" wx:key="index">
+        <view class="product">
+          <view class="title">
+            /
+            <text>{{item.cat_name}}</text>/
+          </view>
+          <view class="content">
+            <block wx:for="{{item.children}}" wx:key="index">
+              <view class="brand">
+                <image src="{{item.cat_icon}}" style="height:62px;"></image>
+                <view class="text">{{item.cat_name}}</view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
   </view>
 </view>
