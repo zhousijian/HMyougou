@@ -1,19 +1,4 @@
 /**index.wxss**/
-.top {
-  padding: 20rpx 16rpx;
-  background-color: #eb4450;
-}
-.top .top-search {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 60rpx;
-  background-color: #fff;
-  border-radius: 5px;
-  font-size: 30rpx;
-  color: #999;
-}
 .carousel image {
   width: 750rpx;
   height: 340rpx;
