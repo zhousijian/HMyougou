@@ -1,2 +1,16 @@
 <!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view class="category">
+  <!-- 引入公共部分的头部搜索框 -->
+  <search />
+  <!-- 主体部分 -->
+  <view class="main">
+    <!-- 左侧菜单栏 -->
+    <block wx:for="{{allData}}" wx:key="index">
+      <view class="menu {{current == index ? 'active' : ''}}">
+        <view class="navs {{current == index ? 'active-border' : ''}}" bindtap="handleClick" data-index="{{index}}">{{item.cat_name}}</view>
+      </view>
+    </block>
+    <!-- 右侧内容 -->
+    <view class="content"></view>
+  </view>
+</view>

@@ -1,1 +1,30 @@
 /* pages/category/index.wxss */
+.main {
+  display: flex;
+  flex-direction: column;
+}
+.main .menu {
+  display: flex;
+  align-items: center;
+  width: 198rpx;
+  height: 100rpx;
+  background-color: #f4f4f4;
+}
+.menu .navs {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+.main .active {
+  background-color: #fff;
+  color: red;
+}
+.active-border {
+  border-left: 3px solid red;
+}
+.main .content {
+  flex: 1;
+  margin: 20rpx 16rpx;
+  background-color: pink;
+}
