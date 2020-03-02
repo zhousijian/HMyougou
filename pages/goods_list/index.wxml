@@ -12,7 +12,7 @@
     </block>
   </view>
   <!-- 商品列表项 -->
-  <block wx:for="{{allData.goods}}" wx:key="index">
+  <block wx:for="{{allGoods}}" wx:key="index">
     <view class="goods_list_item">
       <view class="left">
         <image src="{{item.goods_small_logo}}" mode="aspectFill"></image>
@@ -26,4 +26,9 @@
       </view>
     </view>
   </block>
+  <!-- 是否触底的提示 -->
+  <view wx:if="{{allGoods.length != 0}}">
+    <view class="bottom" wx:if="{{!isShow}}">我也是有底线的！</view>
+    <view class="bottom" wx:if="{{isShow}}">加载中...</view>
+  </view>
 </view>

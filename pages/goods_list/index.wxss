@@ -51,3 +51,9 @@
 .goods_list .goods_list_item .right .price .fuhao {
   font-size: 12px;
 }
+.goods_list .bottom {
+  margin: 15rpx auto;
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+}
