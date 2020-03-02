@@ -19,5 +19,9 @@ Component({
    */
   methods: {
 
+  },
+  // 组件的样式使用
+  options: {
+    addGlobalClass: true
   }
 })

@@ -1,0 +1,5 @@
+<!--pages/goods_list/index.wxml-->
+<view class="goods_list">
+  <!-- 引入头部 -->
+  <search class="common_search" />
+</view>

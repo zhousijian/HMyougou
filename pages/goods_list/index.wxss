@@ -1,0 +1,7 @@
+/* pages/goods_list/index.wxss */
+.common_search .top {
+  background-color: #eee;
+}
+.common_search .top .top-search {
+  justify-content: flex-start;
+}
