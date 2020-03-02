@@ -27,10 +27,12 @@
           </view>
           <view class="content">
             <block wx:for="{{item.children}}" wx:key="index">
-              <view class="brand">
+              <navigator url="/pages/goods_list/index?keyword={{item.cat_name}}">
+                <view class="brand">
                 <image src="{{item.cat_icon}}" style="height:62px;"></image>
                 <view class="text">{{item.cat_name}}</view>
               </view>
+              </navigator>
             </block>
           </view>
         </view>
