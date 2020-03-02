@@ -2,4 +2,28 @@
 <view class="goods_list">
   <!-- 引入头部 -->
   <search class="common_search" />
+  <!-- 排序方式列表 -->
+  <view class="sort">
+    <block wx:for="{{ ['综合','销量','价格'] }}" wx:key="index">
+      <view class="sort_item">
+        {{item}}
+        <text class="iconfont iconpaixu2" wx:if="{{item == '价格'}}"></text>
+      </view>
+    </block>
+  </view>
+  <!-- 商品列表项 -->
+  <block wx:for="{{allData.goods}}" wx:key="index">
+    <view class="goods_list_item">
+      <view class="left">
+        <image src="{{item.goods_small_logo}}" mode="aspectFill"></image>
+      </view>
+      <view class="right">
+        <view class="title">{{item.goods_name}}</view>
+        <view class="price">
+          <text class="fuhao">￥</text>
+          <text class="number">{{item.goods_price}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
 </view>
