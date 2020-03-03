@@ -25,13 +25,15 @@
       <icon type="clear" size="16"></icon>
     </view>
     <view class="bottom">
-      <view>小米</view>
-      <view>小米智能电视</view>
+      <block wx:for="{{historys}}" wx:key="index">
+        <view>{{item}}</view>
+      </block>
+      <!-- <view>小米智能电视</view>
       <view>小米空气净化器</view>
       <view>西门子洗碗机</view>
       <view>华为手机</view>
       <view>苹果</view>
-      <view>锤子</view>
+      <view>锤子</view> -->
     </view>
   </view>
 </view>

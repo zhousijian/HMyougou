@@ -10,10 +10,14 @@ Page({
     // 搜索请求返回的数据
     searchData: [],
     // 是否正在请求
-    load: false
+    load: false,
+    // 搜索历史的本地数据
+    historys: []
   },
   onLoad: function(options) {
-
+    this.setData({
+      historys: wx.getStorageSync('history')
+    })
   },
   // input事件
   handleInput(e) {
@@ -35,18 +39,28 @@ Page({
     this.getData()
   },
   // 点击取消触发的事件
-  handleCancel(){
+  handleCancel() {
     this.setData({
-      value : '',
-      searchData : []
+      value: '',
+      searchData: []
     })
   },
   // 点击回车键事件
-  handleEnter(){
+  handleEnter() {
     // console.log(111)
     // console.log(this.data.value)
+    // 先从本地查看数据情况
+    let arr = wx.getStorageSync('history')
+    if (!Array.isArray(arr)) {
+      arr = []
+    }
+    arr.unshift(this.data.value)
+    // 数组去重
+    arr = [...new Set(arr)]
+    // 跳转前把搜索框的值保存本地
+    wx.setStorageSync('history', arr)
     wx.redirectTo({
-      url : '/pages/goods_list/index?keyword=' + this.data.value
+      url: '/pages/goods_list/index?keyword=' + this.data.value
     })
   },
   // 搜索请求的封装
@@ -54,10 +68,10 @@ Page({
     // 判断是否正在请求
     if (this.data.load) return;
     this.setData({
-    // 如果可以进来，说明不是请求中，把状态改为true
+      // 如果可以进来，说明不是请求中，把状态改为true
       load: true,
       // 保存当前搜索的值
-      finallyValue : this.data.value
+      finallyValue: this.data.value
     })
     request({
       url: '/goods/qsearch',
