@@ -1,0 +1,28 @@
+<!--pages/search/index.wxml-->
+<view class="search">
+<!-- 头部搜索框 -->
+  <view class="header_search">
+    <view class="left">
+      <icon type="search" size="22"></icon>
+      <input placeholder="请输入你想要的商品"></input>
+    </view>
+    <view class="right">取消</view>
+  </view>
+
+  <!-- 历史搜索部分 -->
+  <view class="history">
+    <view class="top">
+      <view>历史搜索</view>
+      <icon type="clear" size="18"></icon>
+    </view>
+    <view class="bottom">
+      <view>小米</view>
+      <view>小米智能电视</view>
+      <view>小米空气净化器</view>
+      <view>西门子洗碗机</view>
+      <view>华为手机</view>
+      <view>苹果</view>
+      <view>锤子</view>
+    </view>
+  </view>
+</view>
