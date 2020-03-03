@@ -63,6 +63,15 @@ Page({
       url: '/pages/goods_list/index?keyword=' + this.data.value
     })
   },
+  // 点击按钮删除搜索历史记录
+  handleDel(){
+    // 删除本地数据
+    wx.removeStorageSync('history')
+    // 删除data里的数据
+    this.setData({
+      historys : []
+    })
+  },
   // 搜索请求的封装
   getData() {
     // 判断是否正在请求

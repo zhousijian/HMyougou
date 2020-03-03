@@ -8,7 +8,8 @@
       placeholder="请输入你想要的商品" 
       value="{{value}}" 
       bindinput="handleInput" 
-      bindconfirm="handleEnter"
+      bindconfirm="handleEnter" 
+      focus
       ></input>
     </view>
     <view class="right" wx:if="{{value}}" bindtap="handleCancel">取消</view>
@@ -22,7 +23,7 @@
   <view class="history">
     <view class="top">
       <view>历史搜索</view>
-      <icon type="clear" size="16"></icon>
+      <icon type="clear" size="16" bindtap="handleDel"></icon>
     </view>
     <view class="bottom">
       <block wx:for="{{historys}}" wx:key="index">
