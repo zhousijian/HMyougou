@@ -1,4 +1,5 @@
 /* pages/search/index.wxss */
+
 .header_search {
   display: flex;
   width: 750rpx;
@@ -6,6 +7,7 @@
   background-color: #eee;
   box-sizing: border-box;
 }
+
 .header_search .left {
   display: flex;
   flex: 1;
@@ -14,13 +16,20 @@
   background-color: #fff;
   border-radius: 5px;
 }
+
 .header_search .left input {
+  flex: 1;
+  height: 100%;
   font-size: 14px;
+  outline: none;
+  border: none;
 }
+
 .header_search .left icon {
   margin: 0 20rpx;
-  margin-top: 2px;
+  /* margin-top: 2px; */
 }
+
 .header_search .right {
   width: 158rpx;
   height: 60rpx;
@@ -31,18 +40,22 @@
   border-radius: 5px;
   font-size: 14px;
 }
+
 .history {
   padding: 20rpx 16rpx;
 }
+
 .history .top {
   display: flex;
   justify-content: space-between;
   padding-bottom: 20rpx;
 }
+
 .history .bottom {
   display: flex;
   flex-wrap: wrap;
 }
+
 .history .bottom view {
   padding: 20rpx;
   background-color: #ddd;
@@ -50,4 +63,16 @@
   font-size: 13px;
   margin-bottom: 20rpx;
   color: #4a4a4a;
+}
+
+.search_data {
+  position: absolute;
+  background-color: #fff;
+  overflow: auto;
+  line-height: 2;
+  height: calc(100vh - 105rpx);
+  padding: 0 20rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
 }

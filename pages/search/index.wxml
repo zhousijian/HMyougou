@@ -1,19 +1,27 @@
 <!--pages/search/index.wxml-->
 <view class="search">
-<!-- 头部搜索框 -->
+  <!-- 头部搜索框 -->
   <view class="header_search">
     <view class="left">
       <icon type="search" size="22"></icon>
-      <input placeholder="请输入你想要的商品"></input>
+      <input 
+      placeholder="请输入你想要的商品" 
+      value="{{value}}" 
+      bindinput="handleInput" 
+      ></input>
     </view>
-    <view class="right">取消</view>
+    <view class="right" wx:if="{{value}}" bindtap="handleCancel">取消</view>
+  </view>
+  <!-- 搜索返回的数据 -->
+  <view class="search_data" wx:if="{{searchData.length != 0}}">
+    <navigator class="searchData" wx:for="{{searchData}}" wx:key="index">{{item.goods_name}}</navigator>
   </view>
 
   <!-- 历史搜索部分 -->
   <view class="history">
     <view class="top">
       <view>历史搜索</view>
-      <icon type="clear" size="18"></icon>
+      <icon type="clear" size="16"></icon>
     </view>
     <view class="bottom">
       <view>小米</view>
