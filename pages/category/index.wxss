@@ -1,9 +1,12 @@
 /* pages/category/index.wxss */
 .main {
   display: flex;
-  position: fixed;
+  /* 定位不能用绝对定位，苹果手机会出现bug */
+  position: absolute;
   top: 100rpx;
   bottom: 0;
+  /* 或者使用视窗高度，不使用定位 */
+  /* height: calc(100vh - 100rpx); */
   width: 750rpx;
 }
 .left {
