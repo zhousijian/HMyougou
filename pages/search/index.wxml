@@ -8,6 +8,7 @@
       placeholder="请输入你想要的商品" 
       value="{{value}}" 
       bindinput="handleInput" 
+      bindconfirm="handleEnter"
       ></input>
     </view>
     <view class="right" wx:if="{{value}}" bindtap="handleCancel">取消</view>

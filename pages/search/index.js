@@ -41,6 +41,14 @@ Page({
       searchData : []
     })
   },
+  // 点击回车键事件
+  handleEnter(){
+    // console.log(111)
+    // console.log(this.data.value)
+    wx.redirectTo({
+      url : '/pages/goods_list/index?keyword=' + this.data.value
+    })
+  },
   // 搜索请求的封装
   getData() {
     // 判断是否正在请求
