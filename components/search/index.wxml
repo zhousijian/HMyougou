@@ -3,7 +3,7 @@
   <navigator url="/pages/search/index">
     <view class="top-search">
       <icon type="search" color="#999"></icon>
-      <text>搜索</text>
+      <text>{{keyword}}</text>
     </view>
   </navigator>
 </view>
