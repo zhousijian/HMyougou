@@ -1,6 +1,6 @@
 <!--components/search/index.wxml-->
 <view class="top">
-  <navigator url="">
+  <navigator url="/pages/search/index">
     <view class="top-search">
       <icon type="search" color="#999"></icon>
       <text>搜索</text>
