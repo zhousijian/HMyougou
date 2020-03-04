@@ -13,18 +13,20 @@
   </view>
   <!-- 商品列表项 -->
   <block wx:for="{{allGoods}}" wx:key="index">
-    <view class="goods_list_item">
-      <view class="left">
-        <image src="{{item.goods_small_logo}}" mode="aspectFill"></image>
-      </view>
-      <view class="right">
-        <view class="title">{{item.goods_name}}</view>
-        <view class="price">
-          <text class="fuhao">￥</text>
-          <text class="number">{{item.goods_price}}</text>
+    <navigator url="/pages/goods_detail/index?id={{item.goods_id}}">
+      <view class="goods_list_item">
+        <view class="left">
+          <image src="{{item.goods_small_logo}}" mode="aspectFill"></image>
+        </view>
+        <view class="right">
+          <view class="title">{{item.goods_name}}</view>
+          <view class="price">
+            <text class="fuhao">￥</text>
+            <text class="number">{{item.goods_price}}</text>
+          </view>
         </view>
       </view>
-    </view>
+    </navigator>
   </block>
   <!-- 是否触底的提示 -->
   <view wx:if="{{allGoods.length != 0}}">
