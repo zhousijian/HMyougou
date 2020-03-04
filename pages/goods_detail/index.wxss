@@ -1,0 +1,15 @@
+/* pages/goods_detail/index.wxss */
+
+.goods_detail {
+  min-height: 100vh;
+}
+
+.goods_detail .carousel swiper {
+  width: 750rpx;
+  height: 750rpx;
+}
+
+.goods_detail .carousel swiper image {
+  width: 100%;
+  height: 100%;
+}

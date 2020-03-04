@@ -1,0 +1,14 @@
+<!--pages/goods_detail/index.wxml-->
+<view class="goods_detail">
+  <!-- 轮播图 -->
+  <view class="carousel">
+    <swiper indicator-dots circular>
+      <block wx:for="{{goodsDetailInfo.pics}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item.pics_big}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+</view>
