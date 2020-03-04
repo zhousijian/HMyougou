@@ -3,9 +3,9 @@
   <!-- 轮播图 -->
   <view class="carousel">
     <swiper indicator-dots circular>
-      <block wx:for="{{goodsDetailInfo.pics}}" wx:key="index">
+      <block wx:for="{{images}}" wx:key="index">
         <swiper-item>
-          <image src="{{item.pics_big}}"></image>
+          <image src="{{item}}" bindtap="handleClickImage" data-index="{{index}}"></image>
         </swiper-item>
       </block>
     </swiper>
