@@ -2,6 +2,7 @@
 
 .goods_detail {
   min-height: 100vh;
+  margin-bottom: 100rpx;
 }
 
 .goods_detail .carousel swiper {
@@ -67,6 +68,7 @@
   align-items: center;
   font-size: 12px;
   color: #666;
+  background-color: #fff;
 }
 .bottom_btn .join_shopping, .bottom_btn .pruchase {
   width: 212rpx;
@@ -79,4 +81,23 @@
 }
 .bottom_btn .pruchase {
   background-color: #eb4450;
+}
+.goods_detail .tab {
+  display: flex;
+  justify-content: space-around;
+  font-size: 14px;
+  padding-bottom: 20rpx;
+}
+.goods_detail .tab view {
+  padding-bottom: 10rpx;
+}
+.goods_detail .tab .active {
+  border-bottom: 2px solid red;
+}
+.goods_detail .goods_content .parameter {
+  display: flex;
+  font-size: 14px;
+}
+.goods_detail .goods_content .parameter view {
+  margin-right: 20rpx;
 }
