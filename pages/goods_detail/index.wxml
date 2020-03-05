@@ -34,7 +34,7 @@
   <!-- 商品信息 -->
   <view class="goods_content">
     <rich-text nodes="{{goodsDetailInfo.goods_introduce}}" wx:if="{{current == 0}}"></rich-text>
-    <view class="parameter" wx:if="{{current == 1}}" wx:for="{{goodsDetailInfo.attrs}}">
+    <view class="parameter" wx:if="{{current == 1}}" wx:for="{{goodsDetailInfo.attrs}}" wx:key="index">
       <view>{{item.attr_name}}</view>
       <view>{{item.attr_vals}}</view>
     </view>
@@ -44,6 +44,7 @@
   <!-- 底部按钮 -->
   <view class="bottom_btn">
     <view class="service">
+      <button open-type="contact"></button>
       <view class="iconfont icon-kefu"></view>
       <view>联系客服</view>
     </view>
