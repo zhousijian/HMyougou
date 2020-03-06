@@ -1,14 +1,14 @@
 <!--pages/cart/index.wxml-->
 <view class="cart">
   <!-- 没有获取地址的样式 -->
-  <view class="weihuoqu" wx:if="{{true}}" bindtap="handleGainAddress">获取收货地址</view>
+  <view class="weihuoqu" wx:if="{{!gainInfo.userName}}" bindtap="handleGainAddress">获取收货地址</view>
   <!-- 用户收货信息 -->
-  <view class="detailInfo" wx:if="{{false}}">
+  <view class="detailInfo" wx:if="{{gainInfo.userName}}">
     <view class="userInfo">
-      <view class="user">收货人：苏</view>
-      <view class="tel">13800138000</view>
+      <view class="user">收货人：{{gainInfo.userName}}</view>
+      <view class="tel">{{gainInfo.telNumber}}</view>
     </view>
-    <view class="address">收货地址：广东省广州市天河区珠吉</view>
+    <view class="address">收货地址：{{gainInfo.address}}</view>
     <image class="img" src="../../images/cart_border@2x.png"></image>
   </view>
   <!-- 店铺名称 -->
