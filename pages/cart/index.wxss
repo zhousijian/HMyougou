@@ -8,6 +8,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20rpx;
+  border-bottom: 1px solid #f4f4f4;
 }
 .cart .weihuoqu::after {
   content: '';

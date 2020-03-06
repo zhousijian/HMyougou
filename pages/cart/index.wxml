@@ -12,25 +12,27 @@
     <image class="img" src="../../images/cart_border@2x.png"></image>
   </view>
   <!-- 店铺名称 -->
-  <view class="store-name">
+  <view class="store-name" wx:if="{{allPrice != 0}}">
     <view class="iconfont icon-dianpu"></view>
     <view>优购生活馆</view>
   </view>
   <!-- 商品信息 -->
-  <block wx:for="{{5}}" wx:key="index">
+  <block wx:for="{{storageGoods}}" wx:key="index">
     <view class="goods-info">
       <icon class="check" type="success" color="red" size="20"></icon>
       <view class="detail-info">
-        <image src="https://img12.360buyimg.com/pop/s1180x940_jfs/t1/97232/21/14044/143864/5e5fdf5cEdc7f6951/be168430d4d194b3.jpg.webp"></image>
+        <navigator url="/pages/goods_detail/index?id={{item.goods_id}}">
+          <image src="{{item.goods_big_logo}}"></image>
+        </navigator>
         <view class="info">
-          <view class="title">详情信品详情信息</view>
+          <view class="title">{{item.goods_name}}</view>
           <view class="price-number">
             <view class="price">
-              <text>￥</text>279.00</view>
+              <text>￥</text>{{item.goods_price}}</view>
             <view class="number">
-              <view class="jian">-</view>
-              <input value="1"></input>
-              <view class="jia">+</view>
+              <view class="jian" bindtap="handleAlterAmount" data-index="{{index}}" data-amount="{{-1}}">-</view>
+              <input value="{{item.goods_number}}"></input>
+              <view class="jia" bindtap="handleAlterAmount" data-index="{{index}}" data-amount="{{1}}">+</view>
             </view>
           </view>
         </view>
@@ -45,7 +47,7 @@
       <view class="total-yunfei">
         <view class="total">合计：
           <text>￥</text>
-          <text class="num">14110.00</text>
+          <text class="num">{{allPrice}}.00</text>
         </view>
         <text class="yunfei">包含运费</text>
       </view>
