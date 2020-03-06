@@ -1,2 +1,55 @@
 <!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<view class="cart">
+  <!-- 没有获取地址的样式 -->
+  <view class="weihuoqu" wx:if="{{true}}" bindtap="handleGainAddress">获取收货地址</view>
+  <!-- 用户收货信息 -->
+  <view class="detailInfo" wx:if="{{false}}">
+    <view class="userInfo">
+      <view class="user">收货人：苏</view>
+      <view class="tel">13800138000</view>
+    </view>
+    <view class="address">收货地址：广东省广州市天河区珠吉</view>
+    <image class="img" src="../../images/cart_border@2x.png"></image>
+  </view>
+  <!-- 店铺名称 -->
+  <view class="store-name">
+    <view class="iconfont icon-dianpu"></view>
+    <view>优购生活馆</view>
+  </view>
+  <!-- 商品信息 -->
+  <block wx:for="{{5}}" wx:key="index">
+    <view class="goods-info">
+      <icon class="check" type="success" color="red" size="20"></icon>
+      <view class="detail-info">
+        <image src="https://img12.360buyimg.com/pop/s1180x940_jfs/t1/97232/21/14044/143864/5e5fdf5cEdc7f6951/be168430d4d194b3.jpg.webp"></image>
+        <view class="info">
+          <view class="title">详情信品详情信息</view>
+          <view class="price-number">
+            <view class="price">
+              <text>￥</text>279.00</view>
+            <view class="number">
+              <view class="jian">-</view>
+              <input value="1"></input>
+              <view class="jia">+</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 总价格 -->
+  <view class="compute">
+    <icon class="all-check" type="success" color="red" size="20"></icon>
+    <view class="all-price">
+      <view class="text">全选</view>
+      <view class="total-yunfei">
+        <view class="total">合计：
+          <text>￥</text>
+          <text class="num">14110.00</text>
+        </view>
+        <text class="yunfei">包含运费</text>
+      </view>
+      <view class="clearing">结算</view>
+    </view>
+  </view>
+</view>
