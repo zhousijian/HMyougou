@@ -52,6 +52,7 @@
     <icon class="all-check" 
     type="success" 
     color="{{allStatus ? 'red' : 'gray'}}" 
+    bindtap="handleAllSelect"
     size="20"></icon>
     <view class="all-price">
       <view class="text">全选</view>

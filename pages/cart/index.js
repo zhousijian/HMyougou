@@ -112,6 +112,21 @@ Page({
     this.allStatusFn()
     this.computedAllPrice()
   },
+  // 点击全选的按钮
+  handleAllSelect(){
+    let allStatus = !this.data.allStatus
+    this.setData({
+      allStatus
+    })
+    this.data.storageGoods.forEach(v=>{
+      v.goods_status = allStatus
+    })
+    this.setData({
+      storageGoods: this.data.storageGoods
+    })
+    wx.setStorageSync('goodsInfoArr', this.data.storageGoods)
+    this.computedAllPrice()
+  },
   // 计算总价格封装函数
   computedAllPrice() {
     let price = 0
