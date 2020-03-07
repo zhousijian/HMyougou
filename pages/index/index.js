@@ -72,5 +72,15 @@ Page({
     this.setData({
       isShow : current
     })
+  },
+  onShow(){
+    // 自定义tabBar
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 0,
+        number: (wx.getStorageSync('goodsInfoArr')).length
+      })
+    }
   }
 })

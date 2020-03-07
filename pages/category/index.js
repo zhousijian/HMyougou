@@ -32,6 +32,16 @@ Page({
     this.setData({
       current : e.currentTarget.dataset.index
     })
+  },
+  onShow(){
+    // 自定义tabBar
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 1,
+        number: (wx.getStorageSync('goodsInfoArr')).length
+      })
+    }
   }
 
 })

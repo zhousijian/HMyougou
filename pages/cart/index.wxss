@@ -1,6 +1,6 @@
 /* pages/cart/index.wxss */
 .cart {
-  margin-bottom: 100rpx;
+  margin-bottom: 220rpx;
   font-size: 14px;
 }
 .cart .weihuoqu {
@@ -143,7 +143,7 @@
   z-index: 10;
   display: flex;
   position: fixed;
-  bottom: 0;
+  bottom: 112rpx;
   height: 100rpx;
   width: 750rpx;
   align-items: center;

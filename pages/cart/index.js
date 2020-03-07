@@ -29,6 +29,14 @@ Page({
     this.allStatusFn()
     // 计算总价格
     this.computedAllPrice()
+    // 自定义tabBar
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 2,
+        number: (wx.getStorageSync('goodsInfoArr')).length
+      })
+    }
   },
   // 点击获取收货地址
   handleGainAddress() {
