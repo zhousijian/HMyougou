@@ -61,6 +61,7 @@ Page({
     goodsInfo.goods_price = this.data.goodsDetailInfo.goods_price;
     goodsInfo.goods_big_logo = this.data.goodsDetailInfo.goods_big_logo;
     goodsInfo.goods_number = 1;
+    goodsInfo.goods_status = true;
     // console.log(goodsInfo);
     // 查询本地是否有加入过该商品
     let arr = wx.getStorageSync('goodsInfoArr')

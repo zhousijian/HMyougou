@@ -12,14 +12,19 @@
     <image class="img" src="../../images/cart_border@2x.png"></image>
   </view>
   <!-- 店铺名称 -->
-  <view class="store-name" wx:if="{{allPrice != 0}}">
+  <view class="store-name" wx:if="{{storageGoods.length > 0}}">
     <view class="iconfont icon-dianpu"></view>
     <view>优购生活馆</view>
   </view>
   <!-- 商品信息 -->
   <block wx:for="{{storageGoods}}" wx:key="index">
     <view class="goods-info">
-      <icon class="check" type="success" color="red" size="20"></icon>
+      <icon class="check" 
+      type="success" 
+      color="{{item.goods_status ? 'red' : 'gray'}}" 
+      bindtap="handleStatus" 
+      data-index="{{index}}"
+      size="20"></icon>
       <view class="detail-info">
         <navigator url="/pages/goods_detail/index?id={{item.goods_id}}">
           <image src="{{item.goods_big_logo}}"></image>
@@ -31,7 +36,10 @@
               <text>￥</text>{{item.goods_price}}</view>
             <view class="number">
               <view class="jian" bindtap="handleAlterAmount" data-index="{{index}}" data-amount="{{-1}}">-</view>
-              <input value="{{item.goods_number}}"></input>
+              <input type="number" 
+              bindblur="handleBlur" 
+              data-index="{{index}}" 
+              value="{{item.goods_number}}"></input>
               <view class="jia" bindtap="handleAlterAmount" data-index="{{index}}" data-amount="{{1}}">+</view>
             </view>
           </view>
@@ -40,8 +48,11 @@
     </view>
   </block>
   <!-- 总价格 -->
-  <view class="compute">
-    <icon class="all-check" type="success" color="red" size="20"></icon>
+  <view class="compute" wx:if="{{storageGoods.length > 0}}">
+    <icon class="all-check" 
+    type="success" 
+    color="{{allStatus ? 'red' : 'gray'}}" 
+    size="20"></icon>
     <view class="all-price">
       <view class="text">全选</view>
       <view class="total-yunfei">
