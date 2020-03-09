@@ -1,0 +1,15 @@
+/* pages/authoriza/index.wxss */
+.authoriza {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15vh;
+}
+.authoriza image {
+  margin-bottom: 20rpx;
+  width: 415rpx;
+  height: 415rpx;
+}
+.authoriza button {
+  width: 415rpx !important;
+}
