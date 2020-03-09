@@ -3,7 +3,7 @@
   <!-- 没有获取地址的样式 -->
   <view class="weihuoqu" wx:if="{{!gainInfo.userName}}" bindtap="handleGainAddress">获取收货地址</view>
   <!-- 用户收货信息 -->
-  <view class="detailInfo" wx:if="{{gainInfo.userName}}">
+  <view class="detailInfo" wx:if="{{gainInfo.userName}}" bindtap="handleGainAddress">
     <view class="userInfo">
       <view class="user">收货人：{{gainInfo.userName}}</view>
       <view class="tel">{{gainInfo.telNumber}}</view>
