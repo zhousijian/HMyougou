@@ -1,4 +1,5 @@
 // pages/cart/index.js
+import request from '../../utils/request.js'
 Page({
 
   data: {
@@ -37,8 +38,51 @@ Page({
   handlePay(){
     const token = wx.getStorageSync('token')
     if(token){
-
+      // 有token值，收集需要的参数，便发起创建订单请求
+      // console.log(this.data.gainInfo)
+      // console.log(this.data.storageGoods)
+      let goods = this.data.storageGoods.map(v=>{
+        if(v.goods_status){
+          return {
+            goods_id : v.goods_id,
+            goods_number : v.goods_number,
+            goods_price : v.goods_price
+          }
+        }
+      })
+      goods = goods.filter(Boolean)
+      // console.log(goods)
+      let { address, telNumber, userName } = this.data.gainInfo
+      let data = {
+        order_price: this.data.allPrice,
+        consignee_addr : userName + telNumber + address,
+        goods
+      }
+      request({
+        url: '/my/orders/create',
+        method : 'post',
+        data,
+        header : {
+          Authorization : token
+        }
+      }).then(res => {
+        // console.log(res)
+        const { order_number } = res.data.message
+        request({
+          url: '/my/orders/req_unifiedorder',
+          method : 'post',
+          data: { order_number },
+          header: {
+            Authorization: token
+          }
+        }).then(res=>{
+          // console.log(res)
+          const { pay } = res.data.message
+          wx.requestPayment(pay)
+        })
+      })
     }else {
+      // 如果没有token值，需要跳转到授权页进行授权
       wx.navigateTo({
         url : '/pages/authoriza/index'
       })
