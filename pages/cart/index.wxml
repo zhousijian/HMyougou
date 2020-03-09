@@ -63,7 +63,8 @@
         </view>
         <text class="yunfei">包含运费</text>
       </view>
-      <view class="clearing">结算</view>
+      <navigator class="clearing" 
+      url="/pages/order_enter/index">结算</navigator>
     </view>
   </view>
 </view>

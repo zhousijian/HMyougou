@@ -1,0 +1,136 @@
+/* pages/cart/index.wxss */
+.cart {
+  /* margin-bottom: 120rpx; */
+  font-size: 14px;
+}
+.cart .weihuoqu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 1px solid #f4f4f4;
+}
+.cart .weihuoqu::after {
+  content: '';
+  display: block;
+  width: 15rpx;
+  height: 15rpx;
+  border-top: 1px solid #666;
+  border-right: 1px solid #666;
+  transform: rotate(45deg);
+  margin-left: 20rpx;
+}
+.detailInfo {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 20rpx solid #f4f4f4;
+}
+
+.detailInfo .userInfo {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  padding-top: 40rpx;
+}
+
+.detailInfo .userInfo .tel {
+  display: flex;
+  align-items: center;
+}
+
+.detailInfo .address {
+  padding: 20rpx;
+  padding-bottom: 40rpx;
+}
+
+.detailInfo .img {
+  width: 750rpx;
+  height: 15rpx;
+}
+
+.store-name {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.goods-info {
+  display: flex;
+  height: 210rpx;
+  align-items: center;
+  padding: 0 20rpx;
+}
+
+.goods-info .check {
+  padding: 0 30rpx;
+}
+
+.goods-info .detail-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.goods-info .detail-info image {
+  width: 160rpx;
+  height: 160rpx;
+  flex-shrink: 0;
+}
+
+.goods-info .detail-info .info {
+  flex: 1;
+  height: 180rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+
+.goods-info .detail-info .info .title {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.goods-info .detail-info .info .price-number {
+  display: flex;
+  justify-content: space-between;
+}
+
+.goods-info .detail-info .info .price-number .price {
+  color: #eb4450;
+}
+
+.goods-info .detail-info .info .price text {
+  font-size: 12px;
+}
+
+.goods-info .detail-info .info .price-number .number {
+  font-size: 13px;
+  color: #666;
+}
+
+.bottom-total {
+  padding: 20rpx;
+}
+.bottom-total text {
+  color: red;
+  font-size: 12px;
+}
+.bottom-total .number {
+  font-size: 16px;
+}
+
+.bottom-buttom {
+  padding: 20rpx;
+}
+
+button {
+  width: 100% !important;
+}

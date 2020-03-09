@@ -1,0 +1,43 @@
+<!--pages/cart/index.wxml-->
+<view class="cart">
+  <!-- 用户收货信息 -->
+  <view class="detailInfo" wx:if="{{gainInfo.userName}}">
+    <view class="userInfo">
+      <view class="user">收货人：{{gainInfo.userName}}</view>
+      <view class="tel">{{gainInfo.telNumber}}</view>
+    </view>
+    <view class="address">收货地址：{{gainInfo.address}}</view>
+    <image class="img" src="../../images/cart_border@2x.png"></image>
+  </view>
+  <!-- 店铺名称 -->
+  <view class="store-name" wx:if="{{storageGoods.length > 0}}">
+    <view class="iconfont icon-dianpu"></view>
+    <view>优购生活馆</view>
+  </view>
+  <!-- 商品信息 -->
+  <block wx:for="{{storageGoods}}" wx:key="index">
+    <view class="goods-info" wx:if="{{item.goods_status}}">
+      <view class="detail-info">
+        <view url="/pages/goods_detail/index?id={{item.goods_id}}">
+          <image src="{{item.goods_big_logo}}"></image>
+        </view>
+        <view class="info">
+          <view class="title">{{item.goods_name}}</view>
+          <view class="price-number">
+            <view class="price">
+              <text>￥</text>{{item.goods_price}}</view>
+            <view class="number">
+             数量 {{item.goods_number}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 总价格 -->
+  <view class="bottom-total">合计：<text>￥</text><text class="number">{{allPrice}}</text></view>
+  <!-- 支付按钮 -->
+  <view class="bottom-buttom">
+    <button type="primary" bindtap="handlePay">支付</button>
+  </view>
+  </view>
