@@ -58,6 +58,7 @@ Page({
         consignee_addr : userName + telNumber + address,
         goods
       }
+      // 创建订单的请求
       request({
         url: '/my/orders/create',
         method : 'post',
@@ -68,6 +69,7 @@ Page({
       }).then(res => {
         // console.log(res)
         const { order_number } = res.data.message
+        // 获取支付参数的请求
         request({
           url: '/my/orders/req_unifiedorder',
           method : 'post',
@@ -78,6 +80,7 @@ Page({
         }).then(res=>{
           // console.log(res)
           const { pay } = res.data.message
+          // 发起微信支付
           wx.requestPayment(pay)
         })
       })
