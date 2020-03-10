@@ -82,6 +82,11 @@ Page({
           const { pay } = res.data.message
           // 发起微信支付
           wx.requestPayment(pay)
+          let arr = this.data.storageGoods.filter(v=>{
+            return !v.goods_status
+          })
+          // console.log(arr)
+          wx.setStorageSync('goodsInfoArr', arr)
         })
       })
     }else {
