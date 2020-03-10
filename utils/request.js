@@ -42,6 +42,13 @@ const request = (config = {}) => {
   // resolve是 .then 里面的函数，一般请求成功时候执行
   // reject 是 .catch 里面的函数，一般用于请求失败时候执行
   return new Promise((resolve, reject) => {
+    // 显示loading加载提示框
+    // 一旦有请求都会展示这个提示框
+    wx.showLoading({
+      title: '加载中',
+      // 加透明蒙层，防止触摸穿透
+      mask : true
+    })
     // 发起请求
     wx.request({
       ...config,
@@ -55,6 +62,8 @@ const request = (config = {}) => {
       complete(res) {
         // 执行错误的兰截器
         request.errors(res);
+        // 不管请求是否成功，请求完后都需要关闭loading加载提示框
+        wx.hideLoading()
       }
     })
   })
